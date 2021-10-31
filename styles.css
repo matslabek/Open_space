@@ -1,0 +1,123 @@
+body{
+    background: black;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.space {
+    background-image: url("img/space.png");
+    background-repeat: repeat;
+    height: calc(100vh - 10px);
+    width: calc(70vw - 10px);
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.planet-area {
+    height: 80%;
+    width: 50%;
+    position: relative;
+    bottom: -20%;
+    overflow-y: hidden;
+}
+.planet {
+    height: 60%;
+    width: 80%;
+    position: relative;
+    bottom: -60%;
+    z-index: 2;
+    min-width: 70%;
+}
+.rocket {
+    height: 20%;
+    width: 20%;
+    position: absolute;
+    left: 40%;
+    bottom: 10%;
+    z-index: 1;
+    transform: rotate(20deg);
+    min-width: 20%;
+}
+.control-panel {
+    width: 30%;
+    height: 35%;
+    position: absolute;
+    bottom: 20%;
+    right: 20%;
+    padding: 10px;
+    background: repeating-linear-gradient(
+            45deg,
+            yellow,
+            yellow 10px,
+            black 10px,
+            black 20px
+    );
+}
+.control-panel__inner {
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    text-align: center;
+    background: slategray;
+    padding: 5px;
+}
+input[type=range][orient=vertical]
+{
+    -webkit-appearance: slider-vertical; /* WebKit */
+    width: 20%;
+    height: 30%;
+}
+
+input[type=textbox]
+{
+    width: 70%;
+    border-color: yellow;
+    border-radius: 25px;
+    background-color: #252424;
+    text-align: center;
+}
+#btn-pswrd {
+    border-radius: 5px;
+    background-color: yellow;
+    font-weight: bold;
+    width: auto;
+}
+#pswrd{
+    color: yellow;
+    background-color: #252424;
+}
+
+.check-buttons {
+    display: flex;
+    justify-content: space-around;
+    padding: 6%;
+}
+.launch-btn[disabled] {
+    background-color: grey;
+    border-radius: 50%;
+}
+
+.launch-btn {
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+}
+.launch-btn:active:hover{
+    background-color: darkred;
+}
+.levers {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 8px;
+}
+
+@keyframes fly {
+    from {
+        left: 40%;
+        bottom: 10%;}
+    to {
+        left: 150%;
+        bottom: 150%;
+    }
+}
+.flying {
+    animation: fly 3s ease-in 1s;
+}
